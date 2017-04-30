@@ -66,3 +66,4 @@ subdat <- cbind(alldat$subject, alldat$activitytype ,std_col, mean_col)
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 average_by_act <- aggregate(subdat[, 3:81], list(subdat$`alldat$activitytype`, subdat$`alldat$subject`), mean)
+write.table(average_by_act, file = "average_by_act.txt", row.names = FALSE)
